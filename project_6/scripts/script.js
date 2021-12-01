@@ -11,11 +11,12 @@ document.querySelector('.left .color-value').innerHTML = color;
 
 color = 'skyblue';
 
-document.querySelector('.right').style.backgroundColor = color;
-document.querySelector('.right .color-value').innerHTML = color;
-
+// Scope collision
 function headingColor() {
   color = 'blue';
   document.querySelector('.title').style.color = color;
 }
-headingColor();
+headingColor(); // var is reset here, changing the value of blue to var in the function
+
+document.querySelector('.right').style.backgroundColor = color;
+document.querySelector('.right .color-value').innerHTML = color;
