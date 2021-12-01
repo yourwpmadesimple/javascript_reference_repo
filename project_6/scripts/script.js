@@ -11,12 +11,13 @@ document.querySelector('.left .color-value').innerHTML = color;
 
 color = 'skyblue';
 
-// Scope collision
+// Valid setup. Function() is called at the end of file
 function headingColor() {
   color = 'blue';
   document.querySelector('.title').style.color = color;
 }
-headingColor(); // var is reset here, changing the value of blue to var in the function
 
 document.querySelector('.right').style.backgroundColor = color;
 document.querySelector('.right .color-value').innerHTML = color;
+
+headingColor(); // This function will run last
