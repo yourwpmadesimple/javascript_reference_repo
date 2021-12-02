@@ -1,6 +1,6 @@
 /**
- * Standard functions
- * @link https://developer.mozilla.org/en-US/docs/Glossary/Function
+ * Arrow functions
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  */
 
 const greenPack = {
@@ -10,7 +10,7 @@ const greenPack = {
     pocketNum: 3
 }
 
-const addPack = function(currentPack) {
+const addPack = (currentPack) => {
     const newArticle = document.querySelector('article');
     newArticle.innerHTML = `
     <h1>${currentPack.name}</h1>
