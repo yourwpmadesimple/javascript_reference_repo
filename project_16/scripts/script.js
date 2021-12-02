@@ -1,9 +1,15 @@
 /**
  * Passing data to functions with paramaters via arguments
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+ * 
+ * 
+ * List of ISO language code:
+ * @link http://lingoes.net/en/translator/langcode.htm
  */
 
-const tipCalculator = function(sum, percentage, currency, prefix) {
+
+
+const tipCalculator = function(sum, percentage) {
     let tip = sum * (percentage / 100)
     let total = sum + tip
     if (prefix) {
@@ -23,4 +29,4 @@ const tipCalculator = function(sum, percentage, currency, prefix) {
     }
 
 }
-tipCalculator(34.50, 10, '$', true)
+tipCalculator(34.50, 10)
