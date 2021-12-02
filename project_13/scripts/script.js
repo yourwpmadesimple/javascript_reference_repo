@@ -7,7 +7,11 @@ const greenPack = {
     name: 'Frog Pack',
     color: 'green',
     volume: 8,
-    pocketNum: 3
+    pocketNum: 3,
+    newVolume: function(volume) {
+        this.volume = volume
+        console.log('this.volume is in the method: ', this.volume)
+    }
 }
 
 const addPack = (currentPack) => {
