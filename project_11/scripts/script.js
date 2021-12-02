@@ -1,5 +1,5 @@
 /**
- * Arrow functions
+ * functions with this keyword
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  */
 
