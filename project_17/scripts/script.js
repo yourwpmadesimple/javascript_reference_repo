@@ -1,14 +1,6 @@
 /**
- * Passing data to functions with paramaters via arguments
- * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
- * 
- * 
- * List of ISO language code:
- * @link http://lingoes.net/en/translator/langcode.htm
- * 
- * 
- * Country currency codes
- * @link https://docs.1010data.com/1010dataReferenceManual/DataTypesAndFormats/currencyUnitCodes.html
+ * Callback functions
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/
  */
 
 const formatter = (locale, currency, value) => {
