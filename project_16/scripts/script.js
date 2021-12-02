@@ -5,28 +5,30 @@
  * 
  * List of ISO language code:
  * @link http://lingoes.net/en/translator/langcode.htm
+ * 
+ * 
+ * Country currency codes
+ * @link https://docs.1010data.com/1010dataReferenceManual/DataTypesAndFormats/currencyUnitCodes.html
  */
 
+const formatter = (locale, currency, value) => {
+    let formattedValue = new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: currency
+    }).format(value)
+    return formattedValue
+}
 
-
-const tipCalculator = function(sum, percentage) {
+const tipCalculator = function(sum, percentage, locale, currency) {
     let tip = sum * (percentage / 100)
     let total = sum + tip
-    if (prefix) {
-        console.log(`
-        Sum before tip: ${currency}${sum.toFixed(2)}
-        Tip percentage: ${percentage}%
-        Tip: ${currency}${tip.toFixed(2)}
-        Total: ${currency}${total.toFixed()}
-        `)
-    } else {
-        console.log(`
-        Sum before tip: ${sum.toFixed(2)}${currency}
-        Tip percentage: ${percentage}%
-        Tip: ${tip.toFixed(2)}${currency}
-        Total: ${total.toFixed()}${currency}
-`)
-    }
+    console.log(`
+    Sum before tip: ${formatter(locale, currency, sum)}
+    Tip percentage: ${percentage}
+    Tip: ${formatter(locale, currency, tip)}
+    Total: ${formatter(locale, currency, total)}
+    `)
+
 
 }
-tipCalculator(34.50, 10)
+tipCalculator(34.50, 10, 'en-US', 'USD')
