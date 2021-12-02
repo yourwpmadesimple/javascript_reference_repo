@@ -1,6 +1,6 @@
 /**
  * Callback functions
- * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/
+ * @link hhttps://developer.mozilla.org/en-US/docs/Glossary/Callback_function
  */
 
 const formatter = (locale, currency, value) => {
