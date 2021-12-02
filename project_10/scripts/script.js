@@ -1,13 +1,20 @@
 /**
- *  Scope and the var statement
- *
- *
+ * Working with function
+ * @link https://developer.mozilla.org/en-US/docs/Glossary/Function
  */
 
-var color = 'purple';
+// function Declaration
+function doSomeMath(a, b) {
+    let c = a + b
+    return c
+}
 
-document.querySelector('.left').style.backgroundColor = color;
-document.querySelector('.left .color-value').innerHTML = color;
+// function expression
+const doMoreMath = function(a, b) {
+    let c = a * b
+    return c
+}
+console.log(doSomeMath)
 
-document.querySelector('.right').style.backgroundColor = color;
-document.querySelector('.right .color-value').innerHTML = color;
+console.log(`Do some math: ${doSomeMath(5, 6)}`)
+console.log(`Do more math ${doMoreMath(2, 8)}`)
