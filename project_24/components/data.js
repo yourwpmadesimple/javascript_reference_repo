@@ -12,7 +12,7 @@ const everydayPack = new Backpack(
     26,
     false,
     "December 5, 2018 15:00:00 PST",
-    "../../project_23/assets/images/everyday.svg"
+    "../../project_24/assets/images/everyday.svg"
 );
 
 // Create new Backpack object
