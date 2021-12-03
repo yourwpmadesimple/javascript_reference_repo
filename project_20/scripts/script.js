@@ -1,7 +1,6 @@
 /**
- * Logical Operators
- * @link https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
- * @link https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+ * Switch statement
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
  */
 
 import Backpack from "./Backpack.js";
@@ -15,7 +14,7 @@ const everydayPack = new Backpack(
   26,
   false,
   "December 5, 2018 15:00:00 PST",
-  "../../project_19/assets/images/everyday.svg"
+  "../../project_20/assets/images/everyday.svg"
 );
 
 const content = `
@@ -49,8 +48,29 @@ newArticle.innerHTML = content;
 
 main.append(newArticle);
 
-if (everydayPack.volume > 30 || everydayPack.volume < 15) {
-  console.log("Backpack is big")
-} else {
-  console.log("Backpack is small")
-}
+const ageStatus = () => {
+  let age = everydayPack.backpackAge();
+  console.log(age)
+  let description;
+  if( age > 30){
+    console.log(age)
+    if( age < 365){
+      console.log(age)
+      if( age < 1095){
+        console.log(age)
+        description = 'old'
+      } else {
+        console.log(age)
+        description = 'lightly used'
+      }
+    } else {
+      console.log(age)
+      description = 'new'
+    }
+  }
+  console.log(`
+  Age: ${age} days
+  status: ${description}
+  `)
+};
+ageStatus()
