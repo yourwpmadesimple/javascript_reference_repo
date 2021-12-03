@@ -15,7 +15,7 @@ const everydayPack = new Backpack(
   26,
   false,
   "December 5, 2018 15:00:00 PST",
-  "../assets/images/everyday.svg"
+  "../../project_19/assets/images/everyday.svg"
 );
 
 const content = `
@@ -49,7 +49,7 @@ newArticle.innerHTML = content;
 
 main.append(newArticle);
 
-if (everydayPack.backpackAge() >= 30) {
+if (everydayPack.volume < 30) {
   console.log("Backpack is used")
 } else {
   console.log("Backpack is new")
