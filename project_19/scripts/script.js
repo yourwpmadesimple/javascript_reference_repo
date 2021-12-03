@@ -49,8 +49,8 @@ newArticle.innerHTML = content;
 
 main.append(newArticle);
 
-if (everydayPack.volume < 30) {
-  console.log("Backpack is used")
+if (everydayPack.volume > 30 || everydayPack.volume < 15) {
+  console.log("Backpack is big")
 } else {
-  console.log("Backpack is new")
+  console.log("Backpack is small")
 }
