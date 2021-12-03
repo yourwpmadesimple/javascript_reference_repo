@@ -57,21 +57,21 @@ let stuffList = document.createElement("ul");
  * for...of loop and arrays. This the modern JavaScript way of using a for loop
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
  */
-for (const item of stuff) {
-  let listItem = document.createElement("li");
-  listItem.innerHTML = item;
-  stuffList.append(listItem);
-}
-
-/**
- * foreach array method
- * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
- */
-// stuff.forEach((item) => {
+// for (const item of stuff) {
 //   let listItem = document.createElement("li");
 //   listItem.innerHTML = item;
 //   stuffList.append(listItem);
-// });
+// }
+
+/**
+ * foreach array method. The preferred way of dealing with arrays of modern JavaScript.
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+ */
+stuff.forEach((item) => {
+  let listItem = document.createElement("li");
+  listItem.innerHTML = item;
+  stuffList.append(listItem);
+});
 
 /**
  * for...in loop and objects
