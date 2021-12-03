@@ -54,7 +54,7 @@ let stuffList = document.createElement("ul");
 // }
 
 /**
- * for...of loop and arrays
+ * for...of loop and arrays. This the modern JavaScript way of using a for loop
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
  */
 for (const item of stuff) {
