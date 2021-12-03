@@ -130,10 +130,12 @@ figure {
 }
 .lid-toggle:hover,
 .lid-toggle:focus {
-  background-color: hsl(0, 0%, 95%);
+  color: white;
+  background-color:black;
 }
 
 .lid-toggle:active {
+  color: white;
   background-color: black;
   color: white;
 }

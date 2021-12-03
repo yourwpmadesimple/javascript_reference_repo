@@ -35,9 +35,19 @@ const content = backpackObjectArray.map(backpack => {
     } inches</span></li>
       <li class="packprop backpack__strap">Right strap length:<span> ${backpack.strapLength.right
     } inches</span></li>
-      <li class="feature backpack__lid">Lid status:<span> ${backpack.lidOpen ? "open" : "closed"
-    }</span></li>
-    </ul>`
+      <li class="feature backpack__lid">Lid status: <span> ${backpack.lidOpen === false ? "Closed" : "Open"}</span></li>
+    </ul>
+    <button class="lid-toggle">Open lid</button>`
+
+  // Change status of backpack (open or closed)
+
+  const button = backPackArticle.querySelector('.lid-toggle')
+  const status = backPackArticle.querySelector('.backpack__lid span')
+  button.addEventListener('click', (e) => {
+    console.log(status.innerText === 'Closed')
+    status.innerText === "Closed" ? status.innerText = "Open" : status.innerText = "Closed"
+  })
+
   // Return backPackArticle to the content
   return backPackArticle;
 })
