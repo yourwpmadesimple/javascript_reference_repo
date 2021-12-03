@@ -24,7 +24,7 @@ function ifLidOpen() {
   } else {
     return everydayPack.lidOpen = "Open";
   }
-};
+};  
 const content = `
     <figure class="backpack__image">
       <img src=${everydayPack.image} alt="" loading="lazy" />
