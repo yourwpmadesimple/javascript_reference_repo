@@ -1,5 +1,5 @@
 /**
- * If Else Statements
+ * Teneary Statements
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
  * @link https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
  */
@@ -14,17 +14,17 @@ const everydayPack = new Backpack(
   15,
   26,
   26,
-  true,
+  false,
   "December 5, 2018 15:00:00 PST",
   "../../project_18/assets/images/everyday.svg"
 );
-function ifLidOpen() {
-  if (everydayPack.lidOpen === false) {
-    return everydayPack.lidOpen = "Closed";
-  } else {
-    return everydayPack.lidOpen = "Open";
-  }
-};  
+// function ifLidOpen() {
+//   if (everydayPack.lidOpen === false) {
+//     return everydayPack.lidOpen = "Closed";
+//   } else {
+//     return everydayPack.lidOpen = "Open";
+//   }
+// };  
 const content = `
     <figure class="backpack__image">
       <img src=${everydayPack.image} alt="" loading="lazy" />
@@ -37,7 +37,7 @@ const content = `
       <li class="feature backpack__pockets">Number of pockets:<span> ${everydayPack.pocketNum}</span></li>        
       <li class="feature backpack__strap">Left strap length:<span> ${everydayPack.strapLength.left} inches</span></li>
       <li class="feature backpack__strap">Right strap length:<span> ${everydayPack.strapLength.right} inches</span></li>
-      <li class="feature backpack__lid">Lid status:<span> ${ifLidOpen()}</span></li>
+      <li class="feature backpack__lid">Lid status:<span> ${everydayPack.lidOpen ? "Closed" : "Open"}</span></li>
     </ul>
   `;
 
