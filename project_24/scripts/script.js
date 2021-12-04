@@ -1,61 +1,82 @@
 /**
- * Challenge: Create an advanced function.
- * - Loop through backpackObjectArray to create an article with the class "backpack".
- * - Give the article the ID of the current backpack object.
- * - Set the inner HTML of the article to the existing HTML output provided in const content.
- * - Append each backpack object to the <main> element.
+ * Event listeners
+ * @link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+ * @link https://developer.mozilla.org/en-US/docs/Web/Events
  */
-// import Backpack from "./components/Backpack.js";
 import backpackObjectArray from "../components/data.js";
 
-// Map through array and make new array
-const content = backpackObjectArray.map(backpack => {
+/**
+ * Add event listener to the lid-toggle button.
+ */
+const lidToggle = function () {
 
-  // Create new article
-  let backPackArticle = document.createElement('article');
-  backPackArticle.classList.add('backpack')
+  // Find the current backpack object in backpackObjectArray
+  let backpackObject = backpackObjectArray.find(({ id }) => id === this.parentElement.id);
+  console.log(backpackObject)
 
-  // Set ID to the the backpack.id property
-  backPackArticle.setAttribute('id', backpack.id)
+  // Toggle lidOpen status
+  backpackObject.lidOpen == true
+    ? backpackObject.lidOpen = false
+    : backpackObject.lidOpen = true;
 
-  backPackArticle.innerHTML =
-    `<figure class="backpack__image">
-      <img src=${backpack.image} alt="" />
+  // Toggle button text
+  this.innerText == "Open lid"
+    ? this.innerText = "Close lid"
+    : this.innerText = "Open lid";
+
+  // Set visible property status text
+  let status = this.parentElement.querySelector(".backpack__lid span");
+  status.innerText == "closed"
+    ? (status.innerText = "open")
+    : (status.innerText = "closed");
+}
+
+/**
+ * - Loop through backpackObjectArray
+ * - create article for each entry
+ * - add articles back to backpackList array
+ */
+const backpackList = backpackObjectArray.map((backpack) => {
+  let backpackArticle = document.createElement("article");
+  backpackArticle.classList.add("backpack");
+  backpackArticle.setAttribute("id", backpack.id);
+
+  backpackArticle.innerHTML = `
+    <figure class="backpack__image">
+      <img src=${backpack.image} alt="" loading="lazy" />
     </figure>
     <h1 class="backpack__name">${backpack.name}</h1>
     <ul class="backpack__features">
-      <li class="packprop backpack__volume">Volume:<span> ${backpack.volume
+      <li class="feature backpack__volume">Volume:<span> ${backpack.volume
     }l</span></li>
-      <li class="packprop backpack__color">Color:<span> ${backpack.color
+      <li class="feature backpack__color">Color:<span> ${backpack.color
     }</span></li>
-      <li class="backpack__age">Age:<span> ${backpack.backpackAge()} days old</span></li>
-      <li class="packprop backpack__pockets">Number of pockets:<span> ${backpack.pocketNum
+      <li class="feature backpack__age">Age:<span> ${backpack.backpackAge()} days old</span></li>
+      <li class="feature backpack__pockets">Number of pockets:<span> ${backpack.pocketNum
     }</span></li>
-      <li class="packprop backpack__strap">Left strap length:<span> ${backpack.strapLength.left
+      <li class="feature backpack__strap">Left strap length:<span> ${backpack.strapLength.left
     } inches</span></li>
-      <li class="packprop backpack__strap">Right strap length:<span> ${backpack.strapLength.right
+      <li class="feature backpack__strap">Right strap length:<span> ${backpack.strapLength.right
     } inches</span></li>
-      <li class="feature backpack__lid">Lid status: <span> ${backpack.lidOpen === false ? "Closed" : "Open"}</span></li>
+      <li class="feature backpack__lid">Lid status: <span>${backpack.lidOpen ? "open" : "closed"
+    }</span></li>
     </ul>
-    <button class="lid-toggle">Open lid</button>`
+    <button class="lid-toggle">Open lid</button>
+  `;
 
-  // Change status of backpack (open or closed)
+  const button = backpackArticle.querySelector(".lid-toggle")
+  const status = backpackArticle.querySelector(".backpack__lid span")
 
-  const button = backPackArticle.querySelector('.lid-toggle')
-  const status = backPackArticle.querySelector('.backpack__lid span')
-  button.addEventListener('click', (e) => {
-    console.log(status.innerText === 'Closed')
-    status.innerText === "Closed" ? status.innerText = "Open" : status.innerText = "Closed"
+  button.addEventListener("click", (event) => {
+    console.log(event)
+    status.innerText === "open" ? status.innerText = "closed" : status.innerText = "open"
   })
 
-  // Return backPackArticle to the content
-  return backPackArticle;
-})
+  return backpackArticle;
+});
 
-// Get main
-const main = document.querySelector('.maincontent')
+const main = document.querySelector(".maincontent");
 
-// Loop through the content array to append each backpack article
-content.forEach(backpack => {
-  main.append(backpack)
-})
+backpackList.forEach((backpack) => {
+  main.append(backpack);
+});
