@@ -128,16 +128,9 @@ figure {
   cursor: pointer;
   background-color: white;
 }
-.lid-toggle:hover,
-.lid-toggle:focus {
+.lid-toggle:hover{
   color: white;
   background-color:black;
-}
-
-.lid-toggle:active {
-  color: white;
-  background-color: black;
-  color: white;
 }
 
 .sitefooter {

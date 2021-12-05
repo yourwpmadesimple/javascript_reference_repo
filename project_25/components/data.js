@@ -3,7 +3,7 @@ import Backpack from "./Backpack.js";
 
 // Create new Backpack object
 const everydayPack = new Backpack(
-    "pack01",
+    "everydayPack__01",
     "Everyday Backpack",
     30,
     "grey",
@@ -12,12 +12,12 @@ const everydayPack = new Backpack(
     26,
     false,
     "December 5, 2018 15:00:00 PST",
-    "../../project_24/assets/images/everyday.svg"
+    "../../project_25/assets/images/everyday.svg"
 );
 
 // Create new Backpack object
 const frogPack = new Backpack(
-    "pack02",
+    "frogPack__01",
     "Frog Backpack",
     8,
     "green",
@@ -26,7 +26,7 @@ const frogPack = new Backpack(
     10,
     false,
     "October 16, 2019 15:00:00 PST",
-    "../../project_24/assets/images/frog.svg"
+    "../../project_25/assets/images/frog.svg"
 );
 
 // Add Backpack objects into an array
